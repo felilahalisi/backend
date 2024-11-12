@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Buku</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Daftar Buku</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Kode Buku</th>
+                    <th>Nama Buku</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book['kode'] }}</td>
+                    <td>{{ book['nama'] }}</td>
+                    <td>{{ book['harga'] }}</td>
+                    <td>{{ book['stok'] }}</td>
+                    <td>
+                        <a href="{{ url_for('edit', id_buku=book['id']) }}" class="btn btn-warning">Edit</a>
+                        <a href="{{ url_for('delete', id_buku=book['id']) }}" class="btn btn-danger">Hapus</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('tambah') }}" class="btn btn-primary">Tambah Buku</a>
+    </div>
+</body>
+</html>
