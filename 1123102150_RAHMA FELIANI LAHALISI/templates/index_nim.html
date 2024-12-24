@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Sparepart</title>
+</head>
+<body>
+    <h1>Daftar Sparepart</h1>
+    <a href="/tambah">Tambah Sparepart</a>
+    <table border="1">
+        <tr>
+            <th>Kode</th>
+            <th>Nama</th>
+            <th>Merk</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+        </tr>
+        {% for sparepart in spareparts %}
+        <tr>
+            <td>{{ sparepart[0] }}</td>
+            <td>{{ sparepart[1] }}</td>
+            <td>{{ sparepart[2] }}</td>
+            <td>{{ sparepart[3] }}</td>
+            <td>
+                <a href="/edit/{{ sparepart[0] }}">Edit</a>
+                <a href="/hapus/{{ sparepart[0] }}">Hapus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Sparepart</title>
+</head>
+<body>
+    <h1>Edit Sparepart</h1>
+    <form method="post">
+        <label>Nama: <input type="text" name="Nama_sparepart" value="{{ sparepart[1] }}"></label><br>
+        <label>Merk: <input type="text" name="Merk" value="{{ sparepart[2] }}"></label><br>
+        <label>Stok: <input type="number" name="Jumlah_stok" value="{{ sparepart[3] }}"></label><br>
+        <button type="submit">Simpan</button>
+    </form>
+</body>
+</html>
